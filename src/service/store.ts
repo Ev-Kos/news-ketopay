@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
+import newsSlice from './slice/newsSlice'
 
 export const store = configureStore({
   reducer: {
+    newsSlice
   },
 })
 
