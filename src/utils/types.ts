@@ -4,7 +4,7 @@ export type TGetNewsResponse = {
 }
 
 export type TGetNewsDocs = {
-  docs: TNews[]
+  docs: Omit<TNews[], 'pub_date_detail'>
 }
 
 export type TNews = {
@@ -12,6 +12,7 @@ export type TNews = {
   web_url: string;
   multimedia: TMultimedia[];
   pub_date: string;
+  pub_date_detail: string;
   source: string;
 };
 

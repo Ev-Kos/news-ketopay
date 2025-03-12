@@ -1,18 +1,22 @@
 import { useSelector } from 'react-redux'
-import styles from './styles.module.css'
 import { getNews } from '../../service/selectors/newsSelector'
-import { useEffect } from 'react'
-import { useAppDispatch } from '../../service/store'
-import { fetchNews } from '../../service/slice/newsSlice'
-
-type TNewsProps = {
-  pub_date: string
-}
+import { TNews } from '../../utils/types'
+import { getDate } from '../../utils/getDate'
+import { useEffect, useState } from 'react'
 
 export const News = () => {
   const news = useSelector(getNews)
-console.log(news)
+
+  const newsGroups = Object.groupBy(news, (item: TNews) =>
+    item.pub_date
+  )
+  const sortedNews = Object.entries(newsGroups).reverse();
+
   return (
-    <div></div>
+    <ul>
+      {/* {sortedNews && sortedNews.map((item) =>
+         <li>{item}</li>
+      )} */}
+    </ul>
   )
 }

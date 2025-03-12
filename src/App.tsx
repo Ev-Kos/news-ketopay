@@ -6,17 +6,26 @@ import { useAppDispatch } from './service/store';
 import { fetchNews } from './service/slice/newsSlice';
 
 function App() {
-  const [date, setDate] = useState<Date>()
+  const [date, setDate] = useState<{year: string, month: string}>()
 
-  
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchNews());
-    // setInterval(() => {
-    //   dispatch(fetchNewsAction());
-    // }, 30000);
-  }, [dispatch]);
+    const now = new Date();
+    const nowMonth = now.getMonth()+1;
+    const nowYear = now.getFullYear();
+    setDate({month: String(nowMonth), year: String(nowYear)})
+  }, [])
+
+  useEffect(() => {
+    if(date) {
+      dispatch(fetchNews(date));
+      // setInterval(() => {
+      //   dispatch(fetchNewsAction());
+      // }, 30000);
+    }
+
+  }, [date]);
 
   
 
