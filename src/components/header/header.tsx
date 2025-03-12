@@ -1,10 +1,34 @@
-import { ButtonMenu } from '../button-menu/button-menu';
+import { useState } from 'react';
+import { Button } from '../button/button';
 import styles from './styles.module.css';
+import { Modal } from '../modal/modal';
+import { news_desk } from '../../utils/constants';
 
 export const Header = () => {
+	const [isMenuOpen, setMenuOpen] = useState(false)
+
+	const handlerModal = () => {
+		setMenuOpen(!isMenuOpen)
+	}
+
 	return (
 		<header className={styles.header}>
-			<ButtonMenu onTouchStart={() => console.log(1)}/>
+			<Button onTouchStart={handlerModal}>
+				<span className={styles.line}></span>
+				<span className={styles.line}></span>
+				<span className={styles.line}></span>
+			</Button>
+			{isMenuOpen && (
+				<Modal closeModal={handlerModal}>
+					<ul className={styles.list}>
+						{news_desk.map((item, index) => 
+							<li className={styles.listItem} key={index}>{item}</li>
+						)}
+					</ul>
+				</Modal>
+			)}
 		</header>
+
+		
 	)
 }

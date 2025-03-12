@@ -5,3 +5,21 @@
 	box-sizing: border-box;
 	align-items: center;
 }
+
+.line {
+  width: 20px;
+  height: 2.25px;
+  background-color: var(--color-black);
+}
+
+.list {
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.listItem {
+	text-transform: uppercase;
+	font-weight: 700;
+}

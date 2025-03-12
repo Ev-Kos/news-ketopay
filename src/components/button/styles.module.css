@@ -6,9 +6,3 @@
   background-color: inherit;
   padding: 0;
 }
-
-.line {
-  width: 20px;
-  height: 2.25px;
-  background-color: var(--color-black);
-}
