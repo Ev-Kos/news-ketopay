@@ -5,9 +5,17 @@
   --color-title: #096FFA;
   --color-border: #EDEDED;
   --color-primary: #ffffff;
+  --color-date: #6D787A;
+}
 
-  width: 100%;
+html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html { 
+  width: 100vw;
   display: flex;
   justify-content: center;
 }
@@ -15,15 +23,22 @@
 body {
   font-family: Lato, Arial, sans-serif;
   font-size: 16px;
+  font-weight: 400;
   background-color: var(--color-primary);
   overflow: hidden;
   width: 360px;
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,
-body,
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 div,
 span,
 h1,
@@ -36,12 +51,17 @@ p,
 a,
 ol,
 ul,
-li,
-form,
-label {
+li {
   margin: 0;
   padding: 0;
   border: 0;
-  vertical-align: baseline;
-  font-weight: 500;
+  color: var(--color-black);
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }

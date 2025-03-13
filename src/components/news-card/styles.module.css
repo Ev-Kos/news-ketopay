@@ -1,0 +1,55 @@
+.cardContainer {
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardContainerLink {
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.cardContainer:last-child {
+  border-bottom: none;
+}
+
+.cardImage {
+  width: 99px;
+  height: 74px;
+  margin-top: 25px;
+  object-fit: cover;
+}
+
+.cardImageMock {
+  width: 99px;
+  height: 74px;
+  margin-top: 25px;
+  background-color: var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between;
+  width: 209px;
+}
+
+.cardTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-title);
+}
+
+.cardText, .cardDate {
+  font-size: 14px;
+}
+
+.cardDate {
+  color: var(--color-date);
+}

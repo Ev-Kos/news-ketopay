@@ -18,6 +18,7 @@ export const Header = () => {
 				<span className={styles.line}></span>
 				<span className={styles.line}></span>
 			</Button>
+			<h1 className={styles.title}>Besider</h1>
 			{isMenuOpen && (
 				<Modal closeModal={handlerModal}>
 					<ul className={styles.list}>
