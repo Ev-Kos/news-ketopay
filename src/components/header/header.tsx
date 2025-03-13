@@ -13,14 +13,14 @@ export const Header = () => {
 
 	return (
 		<header className={styles.header}>
-			<Button onTouchStart={handlerModal}>
+			<Button onTouchStart={handlerModal} onClick={handlerModal}>
 				<span className={styles.line}></span>
 				<span className={styles.line}></span>
 				<span className={styles.line}></span>
 			</Button>
 			<h1 className={styles.title}>Besider</h1>
 			{isMenuOpen && (
-				<Modal closeModal={handlerModal}>
+				<Modal closeModal={handlerModal} closeModalClick={handlerModal}>
 					<ul className={styles.list}>
 						{news_desk.map((item, index) => 
 							<li className={styles.listItem} key={index}>{item}</li>
